@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.judas.authorsnotes.MainActivity">
+
+    <TextView
+        android:id="@+id/note_char_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:id="@+id/hashtag_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <EditText
+        android:id="@+id/search_notes"
+        android:layout_width="373dp"
+        android:layout_height="55dp"
+        android:ems="10"
+        android:fontFamily="monospace"
+        android:inputType="textPersonName"
+        android:text="Search Criteria"
+        android:layout_marginBottom="30dp"
+        android:layout_above="@+id/new_note_button"
+        android:layout_centerHorizontal="true" />
+
+    <Button
+        android:id="@+id/note_search_button"
+        style="@style/Widget.AppCompat.Button.Colored"
+        android:layout_width="210dp"
+        android:layout_height="46dp"
+        android:text="Search Notes"
+        android:layout_alignTop="@+id/new_note_button"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+    <Button
+        android:id="@+id/new_note_button"
+        style="@style/Widget.AppCompat.Button.Colored"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Add New Note"
+        android:layout_marginLeft="21dp"
+        android:layout_marginStart="21dp"
+        android:layout_marginBottom="10dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <ListView
+        android:id="@+id/all_Notes_Listview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/search_notes"
+        android:layout_alignEnd="@+id/search_notes"
+        android:layout_alignRight="@+id/search_notes"
+        android:layout_marginEnd="133dp"
+        android:layout_marginRight="133dp" />
+
+</RelativeLayout>
