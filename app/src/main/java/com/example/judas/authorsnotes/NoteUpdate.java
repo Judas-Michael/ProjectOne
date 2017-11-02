@@ -27,7 +27,7 @@ public class NoteUpdate extends CursorAdapter {
     @Override
     public View newView(Context context, Cursor cursor, ViewGroup parent) {
         LayoutInflater inflater = LayoutInflater.from(context);
-        View v = inflater.inflate(R.layout.activity_main, parent, false);
+        View v = inflater.inflate(R.layout.listview_item, parent, false);
         return v;
     }
 

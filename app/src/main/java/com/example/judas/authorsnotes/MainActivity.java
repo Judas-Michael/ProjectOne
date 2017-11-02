@@ -74,13 +74,13 @@ public class MainActivity extends AppCompatActivity {
 
                 int quantity = dbManager.getQuantityForProduct(searchName);
 
-                if (quantity == -1) {
+                if (quantity == 0 || quantity < 0) {
                     //Product nt found
                     Toast.makeText(MainActivity.this, "Hashtag #" + searchName + " not found",
                             Toast.LENGTH_LONG).show();
                 } else {
 
-                    return db.query(DB_TABLE, null, null, null, null, null, HASH_COL);
+
                 }
             }
         });
@@ -94,8 +94,6 @@ public class MainActivity extends AppCompatActivity {
 
             String name = cursor.getString(1);
 
-            // We can delete by id, no problem, so could simply call dbManager.deleteProduct(id)
-            // In this case, we'd like to show a confirmation dialog
             // with the name of the product, so need to get some data about this list item
             // Want the data? Need to call getItem to get the Cursor for this row
 

@@ -44,6 +44,8 @@ public class AddNoteFrag extends AppCompatActivity{
     Button NewNoteSubmit;
     ImageButton NoteImage;
 
+    Button BackButton;
+
     private Database dbManager;
 
     private static final int REQUEST_SAVE_IMAGE_PERMISSION_REQUEST_CODE = 1001;
@@ -71,11 +73,23 @@ public class AddNoteFrag extends AppCompatActivity{
 
         NewNoteText = (EditText)findViewById(R.id.new_note_text);
         HashAdd = (EditText)findViewById(R.id.hashtag_adder);
+        BackButton = (Button)findViewById(R.id.back_button);
 
         NewNoteSubmit = (Button)findViewById(R.id.new_note_submit);
         NoteImage = (ImageButton)findViewById(R.id.note_image);
         allProductsCursor = dbManager.getCursorAll();
         NotesListAdapter = new NoteUpdate(this, allProductsCursor, false);
+
+        BackButton.setOnClickListener(new View.OnClickListener(){
+
+            @Override
+            public void onClick(View v){
+                Intent myIntent = new Intent(AddNoteFrag.this,MainActivity.class);
+                startActivity(myIntent);
+            }
+
+        });
+
 
 
         NewNoteSubmit.setOnClickListener(new View.OnClickListener() {
@@ -87,7 +101,7 @@ public class AddNoteFrag extends AppCompatActivity{
                 String newQuantity = HashAdd.getText().toString();
 
                 if ( newName.length() == 0  || newQuantity.length() == 0) {   //regex validation
-                    Toast.makeText(AddNoteFrag.this, "Please enter a product name and numerical quantity",
+                    Toast.makeText(AddNoteFrag.this, "Please enter a note and hashtag",
                             Toast.LENGTH_LONG).show();
                     return;
                 }
@@ -139,7 +153,7 @@ public class AddNoteFrag extends AppCompatActivity{
                 mImagePath = imageFile.getAbsolutePath();   // Save path in global variable
                 // Create an URI from the path; the Intent will send this to the camera. A URI defines a location and how to access it
                 // For example content://com.clara.simplecameraapp/my_images/simple_camera_app_15054908234543141945190112.jpg
-                imageFileUri = FileProvider.getUriForFile(AddNoteFrag.this, "com.judas.AuthorsNotes/my_images/", imageFile);
+                imageFileUri = FileProvider.getUriForFile(AddNoteFrag.this, "com.judas.authorsnotes", imageFile);
 
             } catch (IOException ioe) {
 

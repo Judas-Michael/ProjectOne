@@ -23,12 +23,13 @@ public class Database {
     private SQLiteDatabase db;
     protected static final String DB_NAME = "products.db";
 
-    protected static final int DB_VERSION = 3;
+    protected static final int DB_VERSION = 4;
     protected static final String DB_TABLE = "inventory";
 
     private static final String NOTE_ID_COL = "_id";
     protected static final String HASH_COL = "Hashtag";
     protected static final String NOTE_CHAR_COL = "Notes";
+    protected static final String DATE_ADD_COL = "Date";
 
     private static final String DB_TAG = "DatabaseManager" ;
     private static final String SQL_TAG = "SQLHelper" ;
@@ -123,7 +124,7 @@ public class Database {
             //Quantity column, int
 
             String createTable = "CREATE TABLE " + DB_TABLE +
-                    " (" + NOTE_ID_COL +" TEXT UNIQUE, " + NOTE_CHAR_COL +" TEXT, " + HASH_COL + " TEXT)";
+                    " (" + NOTE_ID_COL +" TEXT UNIQUE, " + NOTE_CHAR_COL +" TEXT, " + HASH_COL + " TEXT " + DATE_ADD_COL + " DATE)";
 
             Log.d(SQL_TAG, createTable);
             db.execSQL(createTable);

@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_width="match_parent" android:layout_height="match_parent">
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools">
+    >
 
     <EditText
         android:id="@+id/hashtag_adder"
@@ -13,7 +16,7 @@
         android:ems="10"
         android:fontFamily="monospace"
         android:inputType="textPersonName"
-        android:text="Hastags Here"
+        android:hint="Hastags Here"
         android:textAppearance="@style/TextAppearance.AppCompat.Caption"
         android:textStyle="italic"
         android:typeface="normal" />
@@ -39,7 +42,7 @@
         android:ems="10"
         android:fontFamily="monospace"
         android:inputType="textMultiLine"
-        android:text="New Note Here" />
+        android:hint="New Note Here" />
 
     <ImageButton
         android:id="@+id/note_image"
@@ -49,5 +52,17 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="63dp"
         app:srcCompat="@mipmap/ic_launcher" />
+
+    <Button
+        android:id="@+id/back_button"
+        style="@style/Widget.AppCompat.Button.Borderless"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:fontFamily="monospace"
+        android:text="BACK"
+        android:textSize="8sp" />
 
 </RelativeLayout>

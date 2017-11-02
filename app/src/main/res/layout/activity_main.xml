@@ -24,7 +24,7 @@
         android:ems="10"
         android:fontFamily="monospace"
         android:inputType="textPersonName"
-        android:text="Search Criteria"
+        android:hint="Search Criteria"
         android:layout_marginBottom="30dp"
         android:layout_above="@+id/new_note_button"
         android:layout_centerHorizontal="true" />
