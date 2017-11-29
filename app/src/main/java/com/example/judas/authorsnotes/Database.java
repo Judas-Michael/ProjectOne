@@ -43,7 +43,7 @@ public class Database {
     public void close() {
         helper.close(); //Closes the database - very important!
 
-    }
+    }//CRUD functions for database
 
 
     public int getQuantityForProduct(String productName) {
@@ -78,6 +78,8 @@ public class Database {
             return true; //if at least one row changed
         } return false;
     }
+
+    //returns stored database items that have "_____" stored in the hashtag column
     public boolean deleteProduct(long productId){
         String[] whereArgs = {Long.toString(productId)};
         String where = "_id = ?";
@@ -94,7 +96,7 @@ public class Database {
     public Cursor getCursorAll() {
         return db.query(DB_TABLE, null, null, null, null, null, HASH_COL);
     }
-
+// gives location to search
     public boolean addProduct(String name, int quantity){
         ContentValues newProduct = new ContentValues();
         newProduct.put(HASH_COL, name);
